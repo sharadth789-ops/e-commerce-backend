@@ -20,7 +20,7 @@ public class FoodUserSecurity {
 
         configuration.setAllowedOrigins(
                 List.of("http://localhost:5173",
-                    "https://e-commerce-frontend-rho-git.vercel.app"
+                    "https://e-commerce-frontend-rho-gilt.vercel.app"
                 )
         );
 
