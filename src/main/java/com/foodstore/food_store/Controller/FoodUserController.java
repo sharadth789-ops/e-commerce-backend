@@ -24,7 +24,7 @@ public class FoodUserController {
     public FoodUserController(FoodUserService foodUserService) {
         this.foodUserService = foodUserService;
     }
-    
+
 @PostMapping("/order")
 public FoodUser postMethodName(@RequestBody FoodUser foodUser) {
     return foodUserService.saveUser(foodUser);
@@ -35,7 +35,7 @@ public List<FoodUser> getUserOrders(@PathVariable Long userId) {
     return foodUserService.getOrdersByUserId(userId);
 }
 
-@GetMapping("/admin/orders")
+@GetMapping("orders")
 public List<FoodUser> getAllOrders() {
     return foodUserService.getAllOrders();
 }
