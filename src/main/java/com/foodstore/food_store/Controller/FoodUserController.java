@@ -35,7 +35,7 @@ public List<FoodUser> getUserOrders(@PathVariable Long userId) {
     return foodUserService.getOrdersByUserId(userId);
 }
 
-@GetMapping("orders")
+@GetMapping("/orders")
 public List<FoodUser> getAllOrders() {
     return foodUserService.getAllOrders();
 }
