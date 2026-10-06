@@ -15,18 +15,20 @@ public class FoodUserService {
     public FoodUserService(FoodUserRepository foodUserRepository) {
         this.foodUserRepository = foodUserRepository;
     }
+   
+    public FoodUser saveUser(FoodUser foodUser) {
+    return foodUserRepository.save(foodUser);
+}
 
-    public FoodUser saveUser(FoodUser FoodUser) {
-        return foodUserRepository.save(FoodUser);
-    }
+public List<FoodUser> getAllOrders() {
+    return foodUserRepository.findAll();
+}
 
+public List<FoodUser> getOrdersByUserId(Long userId) {
+    return foodUserRepository.findByUserId(userId);
+}
 
-    public List<FoodUser> getAllOrders() {
-        return foodUserRepository.findAll();
-    }
-    
-    
-    public void deleteOrder(Long id) {
-       foodUserRepository.deleteById(id);
-    }
+public void deleteOrder(Long id) {
+    foodUserRepository.deleteById(id);
+}
 }

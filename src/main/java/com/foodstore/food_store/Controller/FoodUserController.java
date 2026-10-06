@@ -24,20 +24,21 @@ public class FoodUserController {
     public FoodUserController(FoodUserService foodUserService) {
         this.foodUserService = foodUserService;
     }
+@PostMapping("/order")
+public FoodUser postMethodName(@RequestBody FoodUser foodUser) {
+    return foodUserService.saveUser(foodUser);
+}
 
-    @PostMapping("/order")
-    public FoodUser postMethodName(@RequestBody FoodUser foodUser) {
-        
-        return  foodUserService.saveUser(foodUser);
-    }
+@GetMapping("/orders/{userId}")
+public List<FoodUser> getUserOrders(@PathVariable Long userId) {
+    return foodUserService.getOrdersByUserId(userId);
+}
 
-    @GetMapping("/orders")
-      
-    public List<FoodUser> getAllOrders() {
-        return foodUserService.getAllOrders();
-    }    
+@GetMapping("/admin/orders")
+public List<FoodUser> getAllOrders() {
+    return foodUserService.getAllOrders();
+}
 
-    
 @DeleteMapping("/orders/{id}")
 public void deleteOrder(@PathVariable Long id) {
     foodUserService.deleteOrder(id);
