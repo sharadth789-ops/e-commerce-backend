@@ -24,6 +24,7 @@ public class FoodUserController {
     public FoodUserController(FoodUserService foodUserService) {
         this.foodUserService = foodUserService;
     }
+    
 @PostMapping("/order")
 public FoodUser postMethodName(@RequestBody FoodUser foodUser) {
     return foodUserService.saveUser(foodUser);
