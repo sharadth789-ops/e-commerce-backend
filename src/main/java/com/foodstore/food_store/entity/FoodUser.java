@@ -87,10 +87,10 @@ public class FoodUser {
     }
 
     public Long getUserId() {
-    return userId;
-}
+        return userId;
+    }
 
-public void setUserId(Long userId) {
-    this.userId = userId;
-}
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 }
